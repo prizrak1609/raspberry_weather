@@ -6,10 +6,33 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXFileReference section */
+		7837938B2184889800977779 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		7837938C2184889800977779 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		783793932184920D00977779 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		783793972184DAAF00977779 /* boost_src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = boost_src; sourceTree = "<group>"; };
+		783793982184DABE00977779 /* boost_includes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = boost_includes; sourceTree = "<group>"; };
+		783793992184DAD800977779 /* raspberry_sys */ = {isa = PBXFileReference; lastKnownFileType = folder; path = raspberry_sys; sourceTree = "<group>"; };
+		7837939A2184E42300977779 /* curl_src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = curl_src; sourceTree = "<group>"; };
+		7837939B2184E43100977779 /* curl_include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = curl_include; sourceTree = "<group>"; };
+		7837939C21850ACD00977779 /* parson_src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = parson_src; sourceTree = "<group>"; };
+		7837939D21850AD700977779 /* parson_include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = parson_include; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		783793802184887100977779 = {
 			isa = PBXGroup;
 			children = (
+				783793992184DAD800977779 /* raspberry_sys */,
+				783793982184DABE00977779 /* boost_includes */,
+				783793972184DAAF00977779 /* boost_src */,
+				7837939B2184E43100977779 /* curl_include */,
+				7837939A2184E42300977779 /* curl_src */,
+				7837939C21850ACD00977779 /* parson_src */,
+				7837939D21850AD700977779 /* parson_include */,
+				783793932184920D00977779 /* CMakeLists.txt */,
+				7837938C2184889800977779 /* main.cpp */,
+				7837938B2184889800977779 /* Makefile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -18,11 +41,12 @@
 /* Begin PBXLegacyTarget section */
 		783793852184887100977779 /* test_external_make */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "";
 			buildConfigurationList = 783793882184887100977779 /* Build configuration list for PBXLegacyTarget "test_external_make" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = test_external_make;
@@ -168,6 +192,7 @@
 		783793892184887100977779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUGGING_SYMBOLS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -182,6 +207,7 @@
 		7837938A2184887100977779 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				OTHER_CFLAGS = "";
@@ -200,7 +226,7 @@
 				783793872184887100977779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		783793882184887100977779 /* Build configuration list for PBXLegacyTarget "test_external_make" */ = {
 			isa = XCConfigurationList;
@@ -209,7 +235,7 @@
 				7837938A2184887100977779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
