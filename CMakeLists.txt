@@ -16,7 +16,7 @@ set(CURL_DEFINES __riscos__ BUILDING_LIBCURL USE_BLOCKING_SOCKETS)
 
 add_compile_definitions(TARGET_RASPBERRY_PI ${CURL_DEFINES})
 
-add_executable(Tutorial main.cpp ${BOOST_SRC} ${CURL_SRC} ${JSON_PARSE_SRC})
+add_executable(Tutorial main.cpp ${CURL_SRC} ${JSON_PARSE_SRC})
 
 set( CMAKE_VERBOSE_MAKEFILE on)
 
