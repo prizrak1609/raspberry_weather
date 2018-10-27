@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 
 project (Tutorial)
 
-include_directories(raspberry_sys curl_include parson_include)
+include_directories(curl_include parson_include)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -std=c++11")
 
