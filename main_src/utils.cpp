@@ -56,9 +56,9 @@ void Utils::translate(const std::string &text, const std::string &lang_from, con
 
         if(res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+        } else {
+            condition_variable.wait(lock);
         }
-
-        condition_variable.wait(lock);
 
         curl_easy_cleanup(curl);
     }
