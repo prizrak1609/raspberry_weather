@@ -3744,32 +3744,59 @@ curl_src/x509asn1.c.s:
 	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/curl_src/x509asn1.c.s
 .PHONY : curl_src/x509asn1.c.s
 
-main.o: main.cpp.o
+main_src/main.o: main_src/main.cpp.o
 
-.PHONY : main.o
+.PHONY : main_src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main.cpp.o
-.PHONY : main.cpp.o
+main_src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main_src/main.cpp.o
+.PHONY : main_src/main.cpp.o
 
-main.i: main.cpp.i
+main_src/main.i: main_src/main.cpp.i
 
-.PHONY : main.i
+.PHONY : main_src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main.cpp.i
-.PHONY : main.cpp.i
+main_src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main_src/main.cpp.i
+.PHONY : main_src/main.cpp.i
 
-main.s: main.cpp.s
+main_src/main.s: main_src/main.cpp.s
 
-.PHONY : main.s
+.PHONY : main_src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main.cpp.s
-.PHONY : main.cpp.s
+main_src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main_src/main.cpp.s
+.PHONY : main_src/main.cpp.s
+
+main_src/utils.o: main_src/utils.cpp.o
+
+.PHONY : main_src/utils.o
+
+# target to build an object file
+main_src/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main_src/utils.cpp.o
+.PHONY : main_src/utils.cpp.o
+
+main_src/utils.i: main_src/utils.cpp.i
+
+.PHONY : main_src/utils.i
+
+# target to preprocess a source file
+main_src/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main_src/utils.cpp.i
+.PHONY : main_src/utils.cpp.i
+
+main_src/utils.s: main_src/utils.cpp.s
+
+.PHONY : main_src/utils.s
+
+# target to generate assembly for a file
+main_src/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/main_src/utils.cpp.s
+.PHONY : main_src/utils.cpp.s
 
 parson_src/parson.o: parson_src/parson.c.o
 
@@ -4209,9 +4236,12 @@ help:
 	@echo "... curl_src/x509asn1.o"
 	@echo "... curl_src/x509asn1.i"
 	@echo "... curl_src/x509asn1.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... main_src/main.o"
+	@echo "... main_src/main.i"
+	@echo "... main_src/main.s"
+	@echo "... main_src/utils.o"
+	@echo "... main_src/utils.i"
+	@echo "... main_src/utils.s"
 	@echo "... parson_src/parson.o"
 	@echo "... parson_src/parson.i"
 	@echo "... parson_src/parson.s"

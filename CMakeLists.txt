@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 
 project (Tutorial)
 
-include_directories(curl_include parson_include)
+include_directories(curl_include parson_include main_includes)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -std=c++11")
 
@@ -16,7 +16,10 @@ set(CURL_DEFINES __riscos__ BUILDING_LIBCURL USE_BLOCKING_SOCKETS)
 
 add_compile_definitions(TARGET_RASPBERRY_PI ${CURL_DEFINES})
 
-add_executable(Tutorial main.cpp ${CURL_SRC} ${JSON_PARSE_SRC})
+set(TUTORIAL_SRC main_src/main.cpp
+                main_src/utils.cpp)
+
+add_executable(Tutorial ${TUTORIAL_SRC} ${CURL_SRC} ${JSON_PARSE_SRC})
 
 set( CMAKE_VERBOSE_MAKEFILE on)
 
