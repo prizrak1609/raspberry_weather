@@ -4,7 +4,7 @@
 #include <string>
 
 #include "parson.h"
-#include "curl/curl.h"
+#include "curl.h"
 #include "utils.h"
 
 // static
@@ -38,7 +38,7 @@ void Utils::translate(const std::string &text, const std::string &lang_from, con
 
     CURL *curl = curl_easy_init();
 
-    std::string request_url = "http://translate.googleapis.com/translate_a/single?client=gtx&sl=";
+    std::string request_url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=";
     request_url += lang_from;
     request_url += "&tl=";
     request_url += lang_to;
