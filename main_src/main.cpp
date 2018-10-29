@@ -55,7 +55,6 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
 }
 
 int main(int argc, char* argv[]) {
-    std::cout << "start" << std::endl;
     std::string request_url = "http://api.openweathermap.org/data/2.5/weather?q=";
     std::string city = Utils::getParam("-c", argv, argc);
     if (city.empty()) {
@@ -68,7 +67,6 @@ int main(int argc, char* argv[]) {
     lang_to = Utils::getParam("-t", argv, argc);
     lang_from = Utils::getParam("-f", argv, argc);
 
-    std::cerr << "init curl" << std::endl;
     CURL *curl = curl_easy_init();
 
     if(curl) {
