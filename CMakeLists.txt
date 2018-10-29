@@ -10,8 +10,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -std=c++11")
 
 file(GLOB_RECURSE JSON_PARSE_SRC RELATIVE ${CMAKE_SOURCE_DIR} "parson_src/*")
 
-add_compile_definitions(TARGET_RASPBERRY_PI)
-
 set(TUTORIAL_SRC main_src/main.cpp
                 main_src/utils.cpp)
 
