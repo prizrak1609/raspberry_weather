@@ -30,6 +30,8 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
     std::string translated_name = name;
     std::string translated_weather_main = weather_main;
     std::string translated_weather_description = weather_description;
+    std::string translated_wind_speed = "Wind speed: ";
+    std::string translated_wind_speed_unit = "m/s";
 
     if (! lang_to.empty() && ! lang_from.empty()) {
         Utils utils;
@@ -45,11 +47,19 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
         utils.translate(weather_description, lang_from, lang_to, [&translated_weather_description] (const char *translated) {
             translated_weather_description = translated;
         });
+
+        utils.translate(translated_wind_speed, lang_from, lang_to, [&translated_wind_speed] (const char *translated) {
+            translated_wind_speed = translated;
+        });
+
+        utils.translate(translated_wind_speed_unit, lang_from, lang_to, [&translated_wind_speed_unit] (const char *translated) {
+            translated_wind_speed_unit = translated;
+        });
     }
 
     std::cout << translated_name.c_str() << " (lat:" << coord_lat << ", lon:" << coord_lon << ")" << std::endl;
     std::cout << translated_weather_main.c_str() << ": " << translated_weather_description.c_str() << std::endl;
-    std::cout << "Wind speed: " << wind_speed << " m/s" << std::endl;
+    std::cout << translated_wind_speed << wind_speed << " " << translated_wind_speed_unit << std::endl;
 
     return nmemb;
 }

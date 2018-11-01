@@ -25,6 +25,7 @@ size_t write_callback_translate(char *ptr, size_t size, size_t nmemb, void *user
     const char *translated = json_array_get_string(first_array, 0);
 
     Utils *utils = (Utils*)userdata;
+    utils->translated = true;
     utils->condition_variable.notify_all();
     utils->callback(translated);
 
@@ -46,6 +47,7 @@ void Utils::translate(const std::string &text, const std::string &lang_from, con
     request_url += curl_easy_escape(curl, text.c_str(), 0);
 
     if(curl) {
+        translated = false;
         curl_easy_setopt(curl, CURLOPT_URL, request_url.c_str());
         curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
@@ -56,7 +58,7 @@ void Utils::translate(const std::string &text, const std::string &lang_from, con
 
         if(res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
-        } else {
+        } else if(! translated) { // on error curl may call write_callback_translate immediatelly
             condition_variable.wait(lock);
         }
 

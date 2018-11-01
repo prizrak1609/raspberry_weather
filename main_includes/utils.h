@@ -14,6 +14,7 @@ private:
     std::function<void(const char *)> callback;
     std::condition_variable condition_variable;
     std::mutex lock_mutex;
+    bool translated;
 
 public:
     static std::string getParam(const char *name, char *argv[], int argc);
